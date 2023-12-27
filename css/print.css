@@ -1,0 +1,25 @@
+
+body { background: #FFF;}
+
+.bg { display:none}
+.header {display:none}
+
+.main_cat {display:none}
+
+.path  {display:none}
+
+.main_blocks .grid_4 {display:none}
+
+.main_block { background: #FFF; width: 950px;}
+
+.footer_wrapper {display:none}
+
+.grid_8 .otst .print {display:none}
+
+#scroller {display:none}
+
+.breadcrumbs { display:none}
+
+.tech { display:none}
+
+.noprint {display:none}

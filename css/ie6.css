@@ -1,0 +1,41 @@
+#page {height: 100%;}
+ul.cat_prev {
+	float:left;
+	overflow:hidden;
+}
+.center .recl img{
+	margin-bottom:-3px;
+}
+
+
+
+ .admin-block {height: 35px;}
+ #people_search div {padding: 0 0 8px 0;}
+ .center .good {height: 180px;}
+ .good {overflow: visible;}
+ .news {width: 100%;}
+ #footer {height: 90px;}
+ #footer .left {height: 90px;}
+.block h3.notable {background-position: 7px 1em;}
+.block h3 {background: #EFF1F6 url(/i/bull01.gif) no-repeat 7px 1em;}
+.logo {margin-right: -100%;}
+.header_right {display: inline; margin-left: 300px; float: left;}
+
+.left {margin-right: -100%;}
+.center {display: inline; margin-left: 23%; margin-right: -100%;}
+.center .pad {padding: 15px 10px 0 0;}
+.center2 {display: inline; margin-left: 23%;}
+
+#properties_div_bgr {
+	position: absolute; display: none;
+	background-image: url(/i/admin/edit_article_bgr_2.gif); back\ground-image: none;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=/i/admin/edit_article_bgr.png,sizingMethod=crop);
+}
+ #properties_div_bgr_2 {
+	position: absolute; display: none;
+	background-image: url(/i/admin/edit_article_bgr_3.gif); back\ground-image: none;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=/i/admin/edit_article_bgr_3.png,sizingMethod=crop);
+}
+ #properties_div_shadow {position: absolute;}
+  .admin-properties-div, .admin-properties-div-big {position: absolute;}
+   .forum-topics tbody td {height: 26px;}

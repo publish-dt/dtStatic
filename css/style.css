@@ -1,0 +1,33 @@
+BODY { BACKGROUND: #fff; COLOR: silver; FONT-FAMILY: Verdana; FONT-WEIGHT: normal; FONT-SIZE: 8pt; }
+TABLE { COLOR: silver; FONT-FAMILY: Verdana; FONT-WEIGHT: normal; FONT-SIZE: 8pt; }
+TH { FONT-FAMILY: Verdana; FONT-WEIGHT: bold; FONT-SIZE: 8pt; height: 23px; background-image:url(/i/th.gif); background-repeat: repeat-x; color: #2D2D2D }
+FORM,IFRAME,HR,H1,H2,H3,H4,H5,H6 { MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; MARGIN-LEFT: 0px; MARGIN-RIGHT: 0px; }
+BLOCKQUOTE { MARGIN-TOP: 3px; MARGIN-BOTTOM: 3px; MARGIN-LEFT: 10px; MARGIN-RIGHT: 10px; }
+A 	{ COLOR: #F8D74D; TEXT-DECORATION: none; FONT-FAMILY: Verdana; FONT-WEIGHT: bold; FONT-SIZE: 8pt; }
+A:HOVER { COLOR: #FFFF7D; TEXT-DECORATION: underline; FONT-FAMILY: Verdana; FONT-WEIGHT: bold; FONT-SIZE: 8pt; }
+IMG { BORDER-WIDTH: 0px; }
+P { MARGIN-TOP: 5px; MARGIN-BOTTOM: 3px; MARGIN-LEFT: 3px; MARGIN-RIGHT: 0px; }
+BUTTON {BACKGROUND: #F8D74D; BACKGROUND-REPEAT: x-repeat; COLOR: black; border-style: solid; border-width: 1px; HEIGHT: 20px;}
+
+.bc_nor {background-image:url(/i/bc_nor.gif); background-repeat: repeat-x; height:38px; color: #2D2D2D}
+.bc_sel {background-image:url(/i/bc_sel.gif); background-repeat: repeat-x; height:38px; color: #2D2D2D}
+
+.copyrights {COLOR: gray; TEXT-DECORATION: none; FONT-FAMILY: Verdana; FONT-WEIGHT: normal; FONT-SIZE: 6.75pt;}
+.copyrights-a {COLOR: #8F7300; TEXT-DECORATION: none; FONT-FAMILY: Verdana; FONT-WEIGHT: normal; FONT-SIZE: 6.75pt;}
+.copyrights-a:hover {COLOR: #8F8F00; TEXT-DECORATION: underline; FONT-FAMILY: Verdana; FONT-WEIGHT: normal; FONT-SIZE: 6.75pt;}
+
+.stateon { FILTER: alpha(Opacity=100); border: solid 1px #F8D74D; }
+.stateoff { FILTER: alpha(Opacity=50); border: solid 1px #000000; }
+.stateclicked { FILTER: alpha(Opacity=100); border: solid 1px #F8D74D; }
+
+.href_mini	 { COLOR: #F8D74D; TEXT-DECORATION: none; FONT-FAMILY: Verdana; FONT-WEIGHT: normal; FONT-SIZE: 8pt; }
+.href_mini:HOVER { COLOR: #FFFF7D; TEXT-DECORATION: underline; FONT-FAMILY: Verdana; FONT-WEIGHT: normal; FONT-SIZE: 8pt; }
+.mini	 	 { FONT-FAMILY: Verdana; FONT-SIZE: 8pt; }
+
+.invert_link		{ COLOR: #2D2D2D;	TEXT-DECORATION: underline;	FONT-FAMILY: Verdana; FONT-WEIGHT: bold; FONT-SIZE: 8pt; }
+.invert_link:HOVER	{ COLOR: chocolate;	TEXT-DECORATION: none;		FONT-FAMILY: Verdana; FONT-WEIGHT: bold; FONT-SIZE: 8pt; }
+
+.border {border-style: solid; border-color: #6d6d6d; border-top-width: 1px; border-left-width: 1px; border-right-width: 3px; border-bottom-width: 3px; }
+.button {BACKGROUND: #F8D74D; BACKGROUND-REPEAT: x-repeat; COLOR: black; border-style: solid; border-width: 1px;}
+.control,.text { BACKGROUND: silver; COLOR: black; FONT-FAMILY: Verdana; FONT-WEIGHT: normal; FONT-SIZE: 8pt; }
+.light { BACKGROUND: #fff; }

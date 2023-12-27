@@ -1,0 +1,1 @@
+var photoTabs = new tabsGroup("tphoto",2);

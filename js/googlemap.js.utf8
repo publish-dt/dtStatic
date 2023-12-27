@@ -1,0 +1,176 @@
+var gMap,
+gOfficeList = [],
+gPtypeList = [],
+gMainMapLat = 55.354135,
+gMapLat = 55.354135,
+gMainMapLng = 40.297852,
+gMapLng = 40.297852,
+gMainMapZoom = 4,
+gMapZoom = 4,
+gOffice = false;
+
+var gAreaList = {
+    a1: {
+        id: 'a1',
+        name: 'Россия',
+        lat: 55.354135,
+        lng: 40.297852,
+        zoom: 4
+    },
+    a2: {
+        id: 'a2',
+        name: 'Москва',
+        lat: 55.761123,
+        lng: 37.619934,
+        zoom: 10
+    },
+    a3: {
+        id: 'a3',
+        name: 'Екатеринбург',
+        lat: 56.848972,
+        lng: 60.577927,
+        zoom: 10
+    },
+    a4: {
+        id: 'a4',
+        name: 'Воронеж',
+        lat: 51.681071,
+        lng: 39.197159,
+        zoom: 10
+    },
+    a5: {
+        id: 'a5',
+        name: 'Калининград',
+        lat: 54.731361,
+        lng: 20.506668,
+        zoom: 10
+    },
+    a6: {
+        id: 'a6',
+        name: 'Cвердловская область',
+        lat: 59.377988,
+        lng: 61.699219,
+        zoom: 7
+    },
+    a7: {
+        id: 'a7',
+        name: 'Воронежская область',
+        lat: 50.681071,
+        lng: 40.197159,
+        zoom: 8
+    }
+};
+
+function initialize()
+{
+    if (GBrowserIsCompatible() && $('map_canvas')) {
+        gMap = new GMap2(document.getElementById("map_canvas"));
+        gMap.setCenter(new GLatLng(gMainMapLat || gMapLat, gMainMapLng || gMapLng), gMainMapZoom || gMapZoom);
+        var pos = new GControlPosition(G_ANCHOR_TOP_LEFT, new GSize(10,10));
+        //gMap.addControl(new GSmallMapControl (), pos);
+        gMap.addControl(new GLargeMapControl(), pos);
+        //gMap.addControl(new GSmallZoomControl(), pos);
+        //gMap.addControl(new GOverviewMapControl());
+        gMap.addControl(new GMapTypeControl());
+        // Create a base icon for all of our markers that specifies the
+        // shadow, icon dimensions, etc.
+        var baseIcon = new GIcon();
+        baseIcon.image = "/i/gmap_atm.png";
+        baseIcon.iconSize = new GSize(16, 16);
+        //baseIcon.shadow = "http://www.google.com/mapfiles/shadow50.png";
+        //baseIcon.shadowSize = new GSize(37, 34);
+        baseIcon.iconAnchor = new GPoint(8, 16);
+        baseIcon.infoWindowAnchor = new GPoint(8, 16);
+        //baseIcon.infoShadowAnchor = new GPoint(18, 25);
+
+        if (gOffice) {
+            var letteredIcon = new GIcon(baseIcon);
+            if (gOffice.ptype_icon_path) {
+                letteredIcon.image = gOffice.ptype_icon_path;
+            }
+            gMap.addOverlay(new GMarker(new GLatLng(gOffice.lat, gOffice.lng), {icon: letteredIcon}));
+        }
+
+        // Creates a marker whose info window displays the letter corresponding
+        // to the given index.
+
+        function createMarker(o)
+        {
+            // Create a lettered icon for this point using our icon class
+            if (!o.prod_lat || !o.prod_lng) {
+                return;
+            }
+            var letteredIcon = new GIcon(baseIcon);
+            if (o.ptype_icon_path) {
+                letteredIcon.image = o.ptype_icon_path;
+            }
+            // Set up our GMarkerOptions object
+            o.marker = new GMarker(new GLatLng(o.prod_lat, o.prod_lng), { icon: letteredIcon });
+            GEvent.addListener(o.marker, "click", function() {
+                o.marker.openInfoWindowHtml(getOfficeHtml(o));
+            });
+            return o.marker;
+        }
+
+        showAreaList();
+        gOfficeList.each(function(el) {
+            if (el.prod_lat && el.prod_lng) {
+                gMap.addOverlay(createMarker(el));
+            }
+        });
+    }
+}
+
+function getOfficeHtml(o)
+{
+    if (! o) {
+        return '';
+    }
+    // (" + o.ptype_name + ")
+    return "<div style='width: 320px; height: 160px; overflow: hidden;'><h6 class='gmap-title'>" + o.prod_title + "</h6>"
+    + (o.prod_addr ? "<p class='gmap-addr'><strong>адрес:</strong> " + o.prod_addr + "</p>": "")
+    + (o.prod_phone ? "<p class='gmap-phone'><strong>телефон:</strong> " + o.prod_phone + "</p>" : "")
+    + (o.prod_open ? "<p class='gmap-time'><strong>время работы:</strong> " + o.prod_open + "</p>" : "")
+    + "<p style='margin: 5px 0 0;'><a href=\"" + o.prod_link + "\">подробнее</a></p></div>";
+
+    //(o.prod_zoom && gMap.getZoom() != o.prod_zoom ? "<br><a href=\"#\" onclick=\"gMap.setZoom(" + o.prod_zoom  + "); return false;\">Схема проезда</a>" : "")
+    //+ (o.prod_descr ? "<p>" + o.prod_descr + "</p>" : "")
+}
+
+function showOfficeList()
+{
+    var item;
+    for (var i = 0, lim = gOfficeList.length; i < lim; i++)
+    {
+        item = gOfficeList[i];
+        if (!$('chbxArea'+item.ptype_id).checked && !item.marker.isHidden()) item.marker.hide();
+        if ($('chbxArea'+item.ptype_id).checked  && item.marker.isHidden()) item.marker.show();
+    }
+}
+
+function showAreaList()
+{
+    if ($('selAreaList')) {
+        var s = $('selAreaList');
+        for (var i in gAreaList) {
+            s.options[s.options.length] = new Option(gAreaList[i].name, gAreaList[i].id, false, false);
+        }
+    }
+}
+
+function switchMap()
+{
+    var sel = $('selAreaList');
+    if (! sel) {
+        return fasle;
+    }
+    if (sel.options[sel.options.selectedIndex].value) {
+        gMap.setCenter(
+        new GLatLng(
+        gAreaList[sel.options[sel.options.selectedIndex].value].lat,
+        gAreaList[sel.options[sel.options.selectedIndex].value].lng
+        ),
+        gAreaList[sel.options[sel.options.selectedIndex].value].zoom
+        );
+    }
+}

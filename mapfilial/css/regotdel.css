@@ -1,0 +1,28 @@
+
+#points-list {
+	position: absolute;
+	width: 300px;
+	right: 50%;
+	margin-right: -470px;
+	top: 160px;
+	background: #000;
+	opacity: .75;
+	color: #fff;
+	padding: 8px;
+}
+#points-list-content {
+	max-height: 460px;
+	overflow-y: auto;
+}
+.points-list-item {
+	font-size: 11px;
+	font-weight: bold;
+	cursor: pointer;
+	padding: 0 4px;
+	margin-right: 0;
+}
+.points-list-item:hover {
+	background: #fff;
+	color: #000;
+}
+

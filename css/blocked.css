@@ -1,0 +1,146 @@
+@charset "utf-8";
+
+/* CSS Document */
+
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, em, img, strong, sub, sup, b, u, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td {
+
+	margin: 0;
+
+	padding: 0;
+
+	border: 0;
+
+	outline: 0;
+
+	vertical-align: baseline;
+
+}
+
+html {
+
+	font-size: 100.01%;
+
+}
+
+body {
+
+	color: #475259;
+
+	text-align: left;
+
+	font: 12px Arial, Helvetica, sans-serif;
+
+	background: #fff url(/i/bg.gif) repeat-x left top;
+
+}
+
+html, body {
+
+	height: 100%;
+
+}
+
+.clB {
+
+	clear:both;
+
+	font-size: 0px;
+
+	height: 0px;
+
+	line-height: 0px;
+
+	width: 100%;
+
+	overflow: hidden;
+
+}
+
+h1{
+
+	font-size:36px;
+
+	line-height: 32px;
+
+	padding: 65px 0px 21px;
+
+}
+
+p {
+
+	padding-bottom: 16px;
+
+}
+
+div#container {
+
+	width:1000px;
+
+	margin:0 auto;
+
+	min-height: 100%;
+
+ margin-bottom: -67px;
+
+}
+
+* html div#container  {
+
+  height: 100%;
+
+}
+
+.buffer {
+
+    height: 67px;
+
+}
+
+#head{
+
+	height: 155px;
+
+	position: relative;
+
+	padding: 49px 0px 0px 67px;
+
+}
+
+#footer{
+
+	width:900px;
+
+	margin:0 auto;
+
+	clear:both;
+
+	height:67px;
+
+	padding-left: 100px;
+
+	color: #293035;
+
+}
+
+#footer img{
+
+	float:left;
+
+	margin-right: 9px;
+
+}
+
+#content{
+
+	padding: 0px 100px 0px 140px;
+
+}
+
+.man{
+
+	float:right;
+
+	margin-left:125px;
+
+}
+
