@@ -1,0 +1,18 @@
+@charset "windows-1251";
+/* CSS Document */
+
+#logo {position:absolute; top:39px !important; left:8px !important; z-index:500;}
+/*#logo img { width:137px !important; border:0 !important}*/
+
+#logo a { text-decoration:none !important;}
+
+.header_menu { margin-top:7px;}
+
+.main_cat {
+margin: 5px 0 !important;
+}
+
+
+
+.detalnews .fancybox img { display: block !important}
+
